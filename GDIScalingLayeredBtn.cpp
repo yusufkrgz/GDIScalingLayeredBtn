@@ -125,12 +125,17 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
     return FALSE;
   }
 
-  hBtn = ::CreateWindowExW(0 , L"BUTTON", L"Layered Button",
+  hBtn = ::CreateWindowExW(WS_EX_LAYERED , L"BUTTON", L"Layered Button",
     WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON,
     rcBtn.left, rcBtn.top, rcBtn.right - rcBtn.left, rcBtn.bottom - rcBtn.top,
     hWnd, nullptr, hInstance, nullptr);
 
   if (!hBtn)
+  {
+    return FALSE;
+  }
+
+  if (!::SetLayeredWindowAttributes(hBtn, RGB(0, 0, 0), nAlphaBtn, LWA_ALPHA))
   {
     return FALSE;
   }

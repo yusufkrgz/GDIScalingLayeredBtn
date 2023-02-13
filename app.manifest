@@ -17,4 +17,19 @@
         />
     </dependentAssembly>
   </dependency>
+    <!-- DPI Awareness -->
+<!-- GDI Scaling -->
+  <asmv3:application>
+    <asmv3:windowsSettings xmlns="http://schemas.microsoft.com/SMI/2017/WindowsSettings">
+      <gdiScaling>true</gdiScaling>
+    </asmv3:windowsSettings>
+  </asmv3:application>
+<!-- Per Monitor Aware -->
+<!--
+  <application xmlns="urn:schemas-microsoft-com:asm.v3">
+    <windowsSettings>
+      <dpiAwareness xmlns="http://schemas.microsoft.com/SMI/2016/WindowsSettings">PerMonitorV2</dpiAwareness>
+    </windowsSettings>
+  </application>
+-->
 </assembly>
